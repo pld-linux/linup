@@ -2,7 +2,7 @@ Summary:	Linup - Uptime client
 Summary(pl):	Linup - Klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Networking
 URL:		http://www.wonko.com/
