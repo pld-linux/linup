@@ -5,7 +5,7 @@
  
  /* The uptimes project host. */
 -#define HOST "uptimes.wonko.com"
-+#define HOST "217.99.122.91"
++#define HOST "uptimes.tkb.pl"
  /* The port to use (80 is default for HTTP), with the old (4.20) protocol. */
  #define PORT 80
  /* The location of the document to where we should POST. */
