@@ -2,7 +2,7 @@ Summary:	Linup - Uptime client
 Summary(pl):	Linup - Klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Network
 URL:		http://www.wonko.com/
@@ -70,14 +70,14 @@ install %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d/%{name}-polska
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644,root,root,755)
+%defattr(640,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/%{name}
 %{_sysconfdir}/cron.d/%{name}
 %{_sysconfdir}/sysconfig/%{name}
 
 %files polska
-%defattr(644,root,root,755)
+%defattr(640,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}-polska
 %{_sysconfdir}/cron.d/%{name}-polska
 %{_sysconfdir}/sysconfig/%{name}-polska
