@@ -2,10 +2,9 @@ Summary:	Linup - Uptime client
 Summary(pl):	Linup - Klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Networking
-URL:		http://www.wonko.com/
 Source0:	ftp://ftp.smux.net/people/sena/linup/%{name}-%{version}.tar.bz2
 # Source0-md5:	aa6e0154e49590977e050a13b0271f94
 Source1:	%{name}.sysconfig
@@ -13,6 +12,7 @@ Source2:	%{name}.crond
 Source3:	%{name}-polska.sysconfig
 Source4:	%{name}-polska.crond
 Patch0:		%{name}-polska.patch
+URL:		http://www.wonko.com/
 Requires:	crondaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,7 +28,7 @@ Klient do mierzenia czasu uptime w projekcie Uptime. Wspiera wersjê
 Summary:	Linup - Uptime client - Poland
 Summary(pl):	Linup - Uptime - Polska
 Group:		Applications/Networking
-URL:		http://www.uptimes.prv.pl/
+URL:		http://www.uptimes.tkb.pl/
 
 %description polska
 This client count uptime in project Uptime - Polska. It supports
