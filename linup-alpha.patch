@@ -1,0 +1,18 @@
+--- linup/getinfo.c~	Wed Nov 13 12:11:09 2002
++++ linup/getinfo.c	Sun Oct  3 23:20:26 2004
+@@ -88,9 +88,12 @@
+   /* Alpha */
+   if(cpu_str == NULL) {
+     cpu_str = strstr(buff, "platform string\t\t: ");
+-    if(cpu_str != NULL)
+-      cpu_str += 19;
+-	use_machine = 0;
++    if(cpu_str != NULL) {
++      cpu_str = strstr(buff, "cpu model\t\t: ");
++      if(cpu_str != NULL)
++        cpu_str += 13;
++      use_machine = 0;
++    }
+   }
+   /* StrongARM */
+   if(cpu_str == NULL) {
