@@ -12,6 +12,7 @@ Source2:	%{name}.crond
 Source3:	%{name}-polska.sysconfig
 Source4:	%{name}-polska.crond
 Patch0:		%{name}-polska.patch
+Requires:	crondaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
