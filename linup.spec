@@ -1,8 +1,8 @@
-Summary:	Linup - Uptime client
-Summary(pl):	Linup - Klient mierzenia uptime'u
+Summary:	Linup - uptime client
+Summary(pl):	Linup - klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Networking
 Source0:	ftp://ftp.smux.net/people/sena/linup/%{name}-%{version}.tar.bz2
@@ -11,7 +11,8 @@ Source1:	%{name}.sysconfig
 Source2:	%{name}.crond
 Source3:	%{name}-polska.sysconfig
 Source4:	%{name}-polska.crond
-Patch0:		%{name}-polska.patch
+Patch0:		%{name}-alpha.patch
+Patch1:		%{name}-polska.patch
 URL:		http://www.wonko.com/
 Requires:	crondaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,11 +42,12 @@ wersjê 5.0 protoko³u.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 rm -rf ../%{name}-polska
 mkdir ../%{name}-polska
 cp -r ../%{name}/* ../%{name}-polska
 cd ../%{name}-polska
-%patch0 -p1
+%patch1 -p1
 cd ../%{name}
 
 %build
