@@ -4,7 +4,7 @@ Name:		linup
 Version:	1.1.1
 Release:	2
 License:	GPL
-Group:		Applications/Network
+Group:		Applications/Networking
 URL:		http://www.wonko.com/
 Source0:	ftp://ftp.smux.net/people/sena/linup/%{name}-%{version}.tar.bz2
 Source1:	%{name}.sysconfig
@@ -16,22 +16,22 @@ Requires:	crondaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This client count uptime in project Uptime. It supports version 5.0
-of protocol.
+This client count uptime in project Uptime. It supports version 5.0 of
+protocol.
 
 %description -l pl
-Klient do mierzenia czasu uptime w projekcie Uptime. Wspiera
-wersjê 5.0 protoko³u.
+Klient do mierzenia czasu uptime w projekcie Uptime. Wspiera wersjê
+5.0 protoko³u.
 
 %package polska
 Summary:	Linup - Uptime client - Poland
 Summary(pl):	Linup - Uptime - Polska
-Group:		Applications/Network
+Group:		Applications/Networking
 URL:		http://www.uptimes.prv.pl/
 
 %description polska
-This client count uptime in project Uptime - Polska. It supports version 5.0
-of protocol.
+This client count uptime in project Uptime - Polska. It supports
+version 5.0 of protocol.
 
 %description polska -l pl
 Klient do mierzenia czasu uptime w projekcie Uptime - Polska. Wspiera
@@ -47,37 +47,37 @@ cd ../%{name}-polska
 cd ../%{name}
 
 %build
-%{__make} CC="gcc %{rpmcflags}"
+%{__make} CC="%{__cc} %{rpmcflags}"
 
 cd ../%{name}-polska
-%{__make} CC="gcc %{rpmcflags}"
+%{__make} CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_sysconfdir}/sysconfig,%{_sysconfdir}/cron.d}
+install -d $RPM_BUILD_ROOT{%{_bindir},/etc/{sysconfig,cron.d}}
 
 install %{name} $RPM_BUILD_ROOT%{_bindir}
 cd ../%{name}-polska
 install %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}-polska
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/%{name}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d/%{name}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/cron.d/%{name}
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/%{name}-polska
-install %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/cron.d/%{name}-polska
+install %{SOURCE3} $RPM_BUILD_ROOT/etc/sysconfig/%{name}-polska
+install %{SOURCE4} $RPM_BUILD_ROOT/etc/cron.d/%{name}-polska
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(640,root,root,755)
+%defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/%{name}
-%{_sysconfdir}/cron.d/%{name}
-%{_sysconfdir}/sysconfig/%{name}
+/etc/cron.d/%{name}
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}
 
 %files polska
-%defattr(640,root,root,755)
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}-polska
-%{_sysconfdir}/cron.d/%{name}-polska
-%{_sysconfdir}/sysconfig/%{name}-polska
+/etc/cron.d/%{name}-polska
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}-polska
