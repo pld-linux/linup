@@ -2,7 +2,7 @@ Summary:	Linup - Uptime client
 Summary(pl):	Linup - Klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
-Release:	4.1
+Release:	5
 License:	GPL
 Group:		Applications/Networking
 Source0:	ftp://ftp.smux.net/people/sena/linup/%{name}-%{version}.tar.bz2
