@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/Networking
 URL:		http://www.wonko.com/
 Source0:	ftp://ftp.smux.net/people/sena/linup/%{name}-%{version}.tar.bz2
+# Source0-md5:	aa6e0154e49590977e050a13b0271f94
 Source1:	%{name}.sysconfig
 Source2:	%{name}.crond
 Source3:	%{name}-polska.sysconfig
