@@ -29,6 +29,7 @@ Summary:	Linup - Uptime client - Poland
 Summary(pl):	Linup - Uptime - Polska
 Group:		Applications/Networking
 URL:		http://www.uptimes.tkb.pl/
+Requires:	crondaemon
 
 %description polska
 This client count uptime in project Uptime - Polska. It supports
