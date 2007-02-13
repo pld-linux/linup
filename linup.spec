@@ -1,5 +1,5 @@
 Summary:	Linup - uptime client
-Summary(pl.UTF-8):   Linup - klient mierzenia uptime'u
+Summary(pl.UTF-8):	Linup - klient mierzenia uptime'u
 Name:		linup
 Version:	1.1.1
 Release:	6
@@ -27,7 +27,7 @@ Klient do mierzenia czasu uptime w projekcie Uptime. Wspiera wersję
 
 %package polska
 Summary:	Linup - Uptime client - Poland
-Summary(pl.UTF-8):   Linup - Uptime - Polska
+Summary(pl.UTF-8):	Linup - Uptime - Polska
 Group:		Applications/Networking
 URL:		http://www.uptimes.tkb.pl/
 Requires:	crondaemon
